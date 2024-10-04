@@ -79,3 +79,11 @@ int main() {
 }
 
 ```
+
+Example:
+Poco::ThreadPool pool(minThreads, maxThreads, idleTime);
+
+Parameters:
+- minThreads: The minimum number of threads the pool will maintain. These threads are always kept alive.
+- maxThreads: The maximum number of threads the pool can create. Once this limit is reached, the pool will not create new threads and will queue tasks until a thread becomes available.
+- idleTime: The time (in milliseconds) a thread can stay idle before being terminated (if the total number of threads is above the minimum). This helps manage resources by closing unused threads after a certain period.
